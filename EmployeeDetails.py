@@ -7,6 +7,6 @@ for i in range(1,n+1):
     temp['name']=input("Enter employee name:")
     temp["basic-salary"]=input("Enter basic salary:")
     temp['hra']=input("Enter HRA:")
-    temp['salary']=temp['basic-salary']+temp['hra']
+    temp['salary']=int(temp['basic-salary'])+int(temp['hra'])
     d[emp_no]=temp
 print(d)
