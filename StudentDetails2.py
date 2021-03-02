@@ -1,4 +1,4 @@
-# Enter student name and three subject marks calculate
+# Enter student name and five subject marks calculate
 students=dict()
 n=int(input("Enter Number of student:"))
 for i in range(1,n+1):
@@ -7,11 +7,11 @@ for i in range(1,n+1):
     temp["Name"]=input("Enter Student name:")
     temp["Roll No"]=input("Enter Roll Number:")
     temp["Marks"]=list1
-    for j in range(1,6):
+    for j in range(0,5):
         m=int(input("Enter marks:"))
         list1.append(m)
-    temp["total"]=list1[0]+list1[1]+list1[2]
-    avg=temp["total"]/3
+    temp["total"]=list1[0]+list1[1]+list1[2]+list1[3]+list1[4]
+    avg=temp["total"]/5
     if avg>=91 and avg<=100:
         print("Your grade is S")
     elif avg>=81 and avg<91:
