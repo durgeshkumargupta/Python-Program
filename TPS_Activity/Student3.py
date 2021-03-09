@@ -1,11 +1,12 @@
 class Parent:
     students = dict()
-    n = int(input("Enter Number of student:"))
-
+    __n = int(input("Enter Number of student:"))
+    def getNumberOfEnterStudent(self):
+        return self.__n
 
 class Child(Parent):
     def show(self):
-        for i in range(1, super().n + 1):
+        for i in range(1, obj.getNumberOfEnterStudent() + 1):
             list1 = []
             temp = dict()
             temp["Name"] = input("Enter Student name:")
