@@ -1,29 +1,53 @@
+# Multilevel inheritance
 class Student:
-    def __init__(self, usn=0, name=0, age=0,sem=0):
-        pass
-    def getData(self):
-        self.name = input("Enter Name:")
-        self.usn = input("Enter USN:")
-        self.age = int(input("Enter age:"))
-        self.sem = int(input("Enter sem:"))
+    def __init__(self):
+        self.usn=''
+        self.name=''
+        self.age=''
+    def getdata(self):
+        self.usn=int(input("Enter the USN:"))
+        self.name=input("Enter the Name:")
+        self.age=int(input("Enter the age:"))
+
 class Derived1(Student):
-    def __init__(self,m1=0,m2=0,m3=0,m4=0,m5=0):
-        pass
-    def Subject_marks(self):
-        s=Student()
-        s.m1=int("Enter First Marks:")
-        s.m2 = int("Enter Second Marks:")
-        s.m3 = int("Enter third Marks:")
-        s.m4 = int("Enter Fouth Marks:")
-        s.m5 = int("Enter five Marks:")
+    def __init__(self):
+        self.s1=0
+        self.s2=0
+        self.s3=0
+        self.s4=0
+        self.s5=0
+
+    def getmarks(self):
+        super().getdata()
+        self.s1=int(input("Enter the subject1 marks:"))
+        self.s2=int(input("Enter the subject2 marks:"))
+        self.s3=int(input("Enter the subject3 marks:"))
+        self.s4=int(input("Enter the subject4 marks:"))
+        self.s5=int(input("Enter the subject5 marks:"))
+d={}
 class Derived2(Derived1):
+    def __init__(self):
+        super().__init__()
     def display(self):
-        total=self.m1+self.m2+self.m3+self.m4+self.m5
-        per=total%500*100
-        print("Name:",self.name)
-        print("USN:",self.usn)
-        print("Semester:",self.sem)
-        print("Total marks:",total)
-        print("Percentage:",per)
-obj=Derived2()
-obj.display()
+        self.total=self.s1+self.s2+self.s3+self.s4+self.s5
+        self.percent=self.total/500*100
+        print("USN :", self.usn)
+        print("Name :", self.name)
+        print("Age :", self.age)
+        print("Total :",self.total)
+        print("Percentage :", self.percent)
+    def dis(self):
+        for key in d:
+            print(key,d[key])
+
+
+n=int(input("Enter the number of students:"))
+if n==0:
+    print("Enter a valid input")
+else:
+    for i in range(1,n+1):
+        d2=Derived2()
+        d2.getmarks()
+        d2.display()
+        d[d2.name]=d2.__dict__
+        print(d)
