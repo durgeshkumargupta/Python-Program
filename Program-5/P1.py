@@ -1,3 +1,4 @@
+# Hierarchical inheritance
 class Student:
     def __init__(self,usn=0,name=0,age=0):
         pass
@@ -11,7 +12,7 @@ class Student:
         print("Age:",self.age)
 class PgStudent(Student):
     def __init__(self, sem=0, fees=0, stipend=0):
-        super().__init__()
+        pass
     def PgGetData(self):
         super().getData()
         self.sem = int(input("Enter Semester:"))
@@ -24,7 +25,7 @@ class PgStudent(Student):
             print("Stipend:", self.stipend)
 class UgStudent(Student):
     def __init__(self, sem=0, fees=0, stipend=0):
-        super().__init__()
+        pass
     def UgGetData(self):
         super().getData()
         self.sem = int(input("Enter Semester:"))
