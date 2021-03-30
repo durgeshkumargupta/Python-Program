@@ -4,23 +4,25 @@ while True:
     print("3.Check Type Error")
     print("4.Check IOError")
     print("5.Check File Exist Error")
+    print("6.Attribute error")
     print("0.Exit")
     n=int(input("Enter Choice:"))
     if n==1:
         try:
-            f = open('abc.txt', 'r')
+            f = open('abc.txt')
+            #f.write("Sample")  #When i will comment this line it will be show Value Error
             print("Successfully")
         except ValueError:
             print("Value Error")
     elif n==2:
         try:
-            f = open('abc2.txt', 'r')
+            f = open('abc.txt', 'r') # whenever abc.txt will not there then it will FileNotFoundError
             print("Successfully")
         except FileNotFoundError:
             print("File Not Found error")
     elif n==3:
         try:
-            f = open('abc.txt', 'r', 'w')
+            f = open('abc.txt', 'r','w') # when i will one parameter w then it will print Successfully
             print("Successfully")
         except TypeError:
             print("Type Error")
@@ -28,19 +30,28 @@ while True:
         try:
             f = open('abc.txt', 'w+')
             f.write("Sample")
-            f1 = open('ccc.txt', 'r')
+            f1 = open('cc.txt', 'r') # when i will replace cc.txt to abc.txt then it will print Successfully
             print("Successfully")
         except IOError:
             print("IO Error")
     elif n==5:
         try:
-            f=open('abc2.txt','w')
+            f = open('abc2.txt', 'r')
             print("Successfully")
         except FileExistsError:
             print("File Exist Error")
+    elif n==6:
+        try:
+            f=open('abc2.txt','a')
+          #  f.open('abc2.txt', 'r') #When i will comment this line it will be show AttributeError
+            print("Successful")
+        except AttributeError:
+            print("AttributeError")
     elif n==0:
         break
     else:
         print("Invalid input Please try again ")
+
+
 
 
