@@ -1,13 +1,13 @@
 import time
 def fib_decorator(func):
-    def wrapper():
+    def inner():
         starttime=time.time()
         value=func()
         endtime = time.time()
         runtime = endtime-starttime
         print("time taken=",runtime)
         return value
-    return wrapper
+    return inner
 
 @fib_decorator
 def fib():
