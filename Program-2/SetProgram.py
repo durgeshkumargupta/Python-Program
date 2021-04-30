@@ -32,7 +32,7 @@ while True:
         print("set:",set1)
     elif choice==5:
         set1=set(input("Enter first set:").split(" "))
-        set2=set(input("Enter second set:"))
+        set2=set(input("Enter second set:").split(" "))
         print(set1|set2)
     elif choice==6:
         set1=set(input("Enter first set:").split(" "))
