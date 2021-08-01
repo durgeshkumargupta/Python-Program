@@ -44,7 +44,7 @@ for i in range(1,n+1):
         pay = int(input("Enter Pay Amount:"))
         e2 = Developer(first, last, id, pay)
         e2.apply_raise(raise_amt)
-        man[i] = e2.__dict__
+        dev[i] = e2.__dict__
     elif ch==3:
         break
     else:
