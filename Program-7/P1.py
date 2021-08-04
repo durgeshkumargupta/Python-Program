@@ -22,7 +22,7 @@ class Manager(Employee):
     def apply_raise(self):
         self.raise_amt = int(input("Enter Raise amount:"))
         self.pay = int(input("Enter Pay Amount:"))
-        self.pay = self.pay * self.raise_amt
+        self.pay = self.pay + self.raise_amt
 
 man={}
 dev={}
