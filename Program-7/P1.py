@@ -4,7 +4,6 @@ class Employee:
         self.first=input("Enter First Name:")
         self.last=input("Enter Last Name:")
         self.empid=input("Enter ID:")
-        self.pay=input("Enter Pay Amount")
     def apply_raise(self):
         self.raise_amt = int(input("Enter Raise amount:"))
         self.pay = int(input("Enter Pay Amount:"))
